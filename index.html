@@ -648,7 +648,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(<CarReservationApp /
 </script>
 <script>
   var source = document.getElementById("app-source").textContent;
-  var result = Babel.transform(source, { presets: ["react"], sourceType: "script" });
+  var result = Babel.transform(source, { presets: [["react", { runtime: "classic" }]], sourceType: "script" });
   var script = document.createElement("script");
   script.text = result.code;
   document.body.appendChild(script);
