@@ -97,7 +97,7 @@ const toMinutes = (hhmm) => { const [h, m] = hhmm.split(":").map(Number); return
 const overlaps = (aStart, aEnd, bStart, bEnd) => toMinutes(aStart) < toMinutes(bEnd) && toMinutes(bStart) < toMinutes(aEnd);
 const uid = () => `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 const DAY_MIN = 1440;
-const SNAP = 15;
+const SNAP = 30;
 const snapMin = (m) => Math.max(0, Math.min(DAY_MIN, Math.round(m / SNAP) * SNAP));
 const minutesToHHMM = (m) => { const mm = Math.max(0, Math.min(DAY_MIN, m)); const h = Math.floor(mm / 60); return `${pad(h === 24 ? 24 : h)}:${pad(mm % 60)}`; };
 const lineShareUrl = (text) => `https://line.me/R/msg/text/?text=${encodeURIComponent(text)}`;
